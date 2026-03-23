@@ -271,30 +271,11 @@ body {
   line-height: 1.4;
 }
 
-.nav-info {
-  padding: 8px 0;
-}
-
-.nav-info-label {
-  display: block;
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 0.6rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.services-footer-info {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
   color: var(--cool-gray);
-  margin-bottom: 4px;
-}
-
-.nav-info-text {
-  font-size: 0.7rem;
-  line-height: 1.5;
-  color: var(--carbon-black);
-}
-
-.nav-info-text a {
-  color: var(--carbon-black);
-  word-break: break-all;
+  line-height: 1.6;
 }
 
 /* ============================================================
@@ -603,10 +584,6 @@ footer {
     border-bottom: 2px solid var(--carbon-black);
     padding: 8px;
     gap: 4px;
-  }
-
-  .nav-info {
-    display: none;
   }
 
   .service-item {
