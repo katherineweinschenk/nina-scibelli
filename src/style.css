@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Tahoma';
+  src: url('/tahoma.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ============================================================
+   CSS VARIABLES — four-color palette
+   ============================================================ */
+:root {
+  --soft-linen:   #F6F6F6;
+  --tuscan-sun:   #F5CB5C;
+  --carbon-black: #242423;
+  --graphite:     #727272;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--soft-linen);
+  color: var(--carbon-black);
+  font-family: 'Geist', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sparkle-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  animation: sparkle-anim 0.7s ease-out forwards;
+  line-height: 1;
+}
+
+@keyframes sparkle-anim {
+  0%   { opacity: 1;   transform: translate(-50%, -50%) scale(1)   rotate(0deg); }
+  60%  { opacity: 0.6; }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0.1) rotate(200deg); }
+}
+
+/* ============================================================
+   WINDOWS 98-STYLE FRAMES
+   ============================================================ */
+.win98-frame {
+  border: 2px solid var(--carbon-black);
+  box-shadow: 3px 3px 0 var(--graphite);
+  background: var(--soft-linen);
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.win98-bar,
+.sidebar-titlebar {
+  background: linear-gradient(90deg, var(--graphite) 0%, var(--carbon-black) 100%);
+  color: var(--soft-linen);
+  padding: 3px 6px 3px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.72rem;
+  user-select: none;
+}
+
+.win98-bar {
+  letter-spacing: 0.05em;
+}
+
+.win98-controls {
+  display: flex;
+  gap: 3px;
+}
+
+.win98-controls span,
+.sidebar-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--soft-linen);
+  color: var(--carbon-black);
+  border: 1px solid var(--carbon-black);
+  width: 16px;
+  height: 14px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.6rem;
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.5);
+}
+
+.win98-body {
+  padding: 4px;
+}
+
+.img-placeholder {
+  background-color: var(--graphite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft-linen);
+  font-family: 'Tahoma', sans-serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: var(--soft-linen);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.site-title {
+  font-size: 1rem;
+  color: var(--carbon-black);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.site-title:hover {
+  text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+nav a {
+  color: var(--carbon-black);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--graphite);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee-wrapper {
+  overflow: hidden;
+  padding: 0.7rem 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-content {
+  white-space: nowrap;
+  padding: 0 3rem;
+  font-size: 2rem;
+  color: var(--tuscan-sun);
+  letter-spacing: 0.08em;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   LAYOUT SHELL
+   ============================================================ */
+main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.9rem;
+  color: var(--graphite);
+  border-top: 2px solid var(--carbon-black);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+  padding: 3rem 2rem;
+}
+
+.home-hero-image {
+  width: 376px;
+  height: 276px;
+}
+
+.home-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.home-nav-links a {
+  font-size: 3rem;
+  color: var(--carbon-black);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+.home-nav-links a:hover {
+  color: var(--graphite);
+  text-decoration: underline;
+}
+
+.pride-flag {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid var(--carbon-black);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--graphite);
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-outer {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 2rem 3rem;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  max-width: 620px;
+  width: 100%;
+}
+
+.about-portrait {
+  width: 218px;
+  height: 218px;
+}
+
+.about-heading,
+.services-heading {
+  font-size: 5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--carbon-black);
+  line-height: 1;
+}
+
+.about-heading {
+  text-align: center;
+}
+
+.about-body {
+  text-align: center;
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.about-contact {
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.about-contact a,
+.services-contact a {
+  color: var(--graphite);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
+.services-outer {
+  padding: 2.5rem 2rem 3rem;
+}
+
+.services-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.services-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.services-heading {
+  margin-bottom: 1.8rem;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--graphite);
+}
+
+.service-item:first-of-type {
+  border-top: 1px solid var(--graphite);
+}
+
+.service-info h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  font-weight: normal;
+  color: var(--carbon-black);
+  margin-bottom: 0.35rem;
+}
+
+.service-description {
+  font-size: 0.9rem;
+  color: var(--graphite);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.service-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--graphite);
+}
+
+.price-duration {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.price-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--graphite);
+  margin-bottom: 3px;
+}
+
+.price-cost {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.services-contact {
+  margin-top: 2.2rem;
+  font-size: 1rem;
+}
+
+/* ============================================================
+   SLIDING SCALE SIDEBAR
+   ============================================================ */
+.sliding-scale-sidebar {
+  width: 210px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 5rem;
+}
+
+.sidebar-window {
+  border: 2px solid var(--carbon-black);
+  box-shadow: 3px 3px 0 var(--graphite);
+  overflow: hidden;
+}
+
+.sidebar-titlebar {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sidebar-close {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.sidebar-content {
+  background-color: var(--tuscan-sun);
+  padding: 1rem;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: var(--carbon-black);
+  font-style: italic;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 700px) {
+  .services-layout {
+    flex-direction: column;
+  }
+
+  .sliding-scale-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .service-item {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  header {
+    padding: 0.8rem 1.2rem;
+  }
+
+  nav {
+    gap: 1.5rem;
+  }
+
+  .home-hero-image {
+    width: 100%;
+    max-width: 376px;
+    height: 220px;
+  }
+
+  .win98-frame {
+    width: 100%;
+    max-width: 376px;
+  }
+}
