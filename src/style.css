@@ -416,6 +416,7 @@ footer {
   height: auto;
   object-fit: cover;
   flex-shrink: 0;
+  padding-top: 3rem;
 }
 
 .about-heading {
@@ -548,5 +549,6 @@ footer {
     width: 100%;
     max-width: 280px;
     height: auto;
+    padding-top: 0;
   }
 }
