@@ -25,12 +25,12 @@
    CSS VARIABLES — color palette
    ============================================================ */
 :root {
-  --soft-white:      #eeeae7;
-  --lightest-gray:   #dfdfdf;
-  --carbon-black:    #242423;
-  --graphite:        #333533;
-  --cool-gray:       #727272;
-  --butter:          #efde9c;
+  --soft-white:      #ffffff;
+  --lightest-gray:   #e5e7eb;
+  --carbon-black:    #1a56c8;
+  --graphite:        #1a56c8;
+  --cool-gray:       #4a7fd4;
+  --butter:          #f3f4e6;
 }
 
 /* ============================================================
@@ -43,13 +43,10 @@
 }
 
 body {
-  background-color: var(--butter);
-  background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.12) 1.2px, transparent 0);
-  background-size: 24px 24px;
+  background-color: #bce6ff;
   color: var(--carbon-black);
   font-family: Helvetica, Arial, sans-serif;
   font-size: 17px;
-  text-transform: lowercase;
   line-height: 1.7;
   height: 100vh;
   overflow: hidden;
@@ -78,6 +75,174 @@ body {
 }
 
 /* ============================================================
+   LANDSCAPE BACKGROUND
+   ============================================================ */
+.landscape-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.landscape-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(45deg, rgba(200,215,230,0.25) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(200,215,230,0.25) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(200,215,230,0.25) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(200,215,230,0.25) 75%),
+    linear-gradient(to bottom, #bce6ff 0%, #d4edff 50%, #f3f4e6 100%);
+  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100%;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px, 0 0;
+}
+
+.landscape-mountains-back {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 25%;
+  height: 180px;
+  background: #6ca5d8;
+  opacity: 0.7;
+  clip-path: polygon(0% 100%, 10% 70%, 25% 40%, 40% 20%, 55% 35%, 70% 60%, 85% 50%, 100% 100%);
+}
+
+.landscape-mountains-back-right {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  width: 20%;
+  height: 150px;
+  background: #6ca5d8;
+  opacity: 0.7;
+  clip-path: polygon(0% 100%, 20% 60%, 40% 25%, 60% 15%, 80% 40%, 100% 100%);
+}
+
+.landscape-mountains-front {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 20%;
+  height: 160px;
+  background: #427ab0;
+  opacity: 0.8;
+  clip-path: polygon(0% 100%, 15% 50%, 30% 20%, 45% 10%, 60% 30%, 75% 55%, 100% 100%);
+}
+
+.landscape-mountains-front-right {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  width: 18%;
+  height: 130px;
+  background: #427ab0;
+  opacity: 0.8;
+  clip-path: polygon(0% 100%, 25% 50%, 45% 15%, 65% 25%, 85% 55%, 100% 100%);
+}
+
+.landscape-ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #1a401c;
+  border-top: 4px solid #0c2b0e;
+}
+
+.landscape-tree {
+  position: absolute;
+  bottom: 100%;
+  background: #0c2b0e;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.landscape-tree--1 { left: 2%; width: 24px; height: 50px; }
+.landscape-tree--2 { left: 5%; width: 30px; height: 65px; background: #1a401c; }
+.landscape-tree--3 { left: 9%; width: 20px; height: 40px; }
+.landscape-tree--4 { right: 3%; width: 26px; height: 55px; background: #1a401c; }
+.landscape-tree--5 { right: 7%; width: 20px; height: 42px; }
+.landscape-tree--6 { right: 10%; width: 28px; height: 60px; background: #1a401c; }
+
+.landscape-cloud {
+  position: absolute;
+  background: white;
+  z-index: 1;
+  clip-path: polygon(20% 100%, 20% 60%, 0% 60%, 0% 40%, 20% 40%, 20% 20%, 40% 20%, 40% 0%, 70% 0%, 70% 20%, 90% 20%, 90% 40%, 100% 40%, 100% 70%, 90% 70%, 90% 100%);
+}
+
+.landscape-cloud--1 {
+  top: 10%;
+  width: 128px;
+  height: 48px;
+  opacity: 0.9;
+  animation: moveCloud 30s linear infinite;
+}
+
+.landscape-cloud--2 {
+  top: 25%;
+  width: 192px;
+  height: 64px;
+  opacity: 0.8;
+  animation: moveCloud 20s linear infinite;
+  animation-delay: -5s;
+  clip-path: polygon(10% 100%, 10% 70%, 0% 70%, 0% 30%, 15% 30%, 15% 15%, 35% 15%, 35% 0%, 65% 0%, 65% 20%, 85% 20%, 85% 40%, 100% 40%, 100% 80%, 90% 80%, 90% 100%);
+}
+
+.landscape-cloud--3 {
+  top: 18%;
+  width: 160px;
+  height: 56px;
+  opacity: 0.75;
+  animation: moveCloud 35s linear infinite;
+  animation-delay: -12s;
+  clip-path: polygon(15% 100%, 15% 65%, 5% 65%, 5% 40%, 20% 40%, 20% 20%, 45% 20%, 45% 5%, 75% 5%, 75% 25%, 90% 25%, 90% 50%, 100% 50%, 100% 85%, 85% 85%, 85% 100%);
+}
+
+.landscape-cloud--4 {
+  top: 6%;
+  width: 100px;
+  height: 36px;
+  opacity: 0.85;
+  animation: moveCloud 40s linear infinite;
+  animation-delay: -20s;
+}
+
+.landscape-cloud--5 {
+  top: 32%;
+  width: 140px;
+  height: 50px;
+  opacity: 0.7;
+  animation: moveCloud 25s linear infinite;
+  animation-delay: -8s;
+  clip-path: polygon(10% 100%, 10% 70%, 0% 70%, 0% 30%, 15% 30%, 15% 15%, 35% 15%, 35% 0%, 65% 0%, 65% 20%, 85% 20%, 85% 40%, 100% 40%, 100% 80%, 90% 80%, 90% 100%);
+}
+
+.landscape-cloud--6 {
+  top: 14%;
+  width: 180px;
+  height: 60px;
+  opacity: 0.65;
+  animation: moveCloud 45s linear infinite;
+  animation-delay: -30s;
+  clip-path: polygon(15% 100%, 15% 65%, 5% 65%, 5% 40%, 20% 40%, 20% 20%, 45% 20%, 45% 5%, 75% 5%, 75% 25%, 90% 25%, 90% 50%, 100% 50%, 100% 85%, 85% 85%, 85% 100%);
+}
+
+.landscape-cloud--7 {
+  top: 38%;
+  width: 110px;
+  height: 40px;
+  opacity: 0.8;
+  animation: moveCloud 32s linear infinite;
+  animation-delay: -18s;
+}
+
+@keyframes moveCloud {
+  0%   { transform: translateX(-200px); }
+  100% { transform: translateX(100vw); }
+}
+
+/* ============================================================
    WINDOWS 98-STYLE FRAMES
    ============================================================ */
 .win98-controls {
@@ -89,14 +254,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--soft-white);
-  color: var(--carbon-black);
-  border: 1px solid var(--carbon-black);
+  background: var(--carbon-black);
+  color: var(--soft-white);
+  border: 2px solid var(--soft-white);
   width: 16px;
   height: 14px;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.8rem;
-  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.5);
 }
 
 /* ============================================================
@@ -106,17 +270,17 @@ body {
   width: min(80vw, calc(100vw - 40px));
   height: calc(100vh - 80px);
   border: 2px solid var(--carbon-black);
-  box-shadow: 4px 4px 0 rgba(0,0,0,0.45), inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.08);
+  box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  background: var(--soft-white);
+  background: var(--butter);
   position: relative;
   z-index: 10;
 }
 
 .site-titlebar {
-  background: linear-gradient(90deg, var(--graphite) 0%, var(--carbon-black) 100%);
-  color: var(--soft-white);
+  background: var(--carbon-black);
+  color: var(--butter);
   padding: 4px 6px 4px 8px;
   display: flex;
   justify-content: space-between;
@@ -149,7 +313,7 @@ body {
 
 .site-nav-panel {
   flex-shrink: 0;
-  background: var(--soft-white);
+  background: var(--butter);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -161,9 +325,8 @@ body {
   display: block;
   padding: 5px 10px;
   background: var(--soft-white);
-  border: 2px solid;
-  border-color: rgba(255,255,255,0.95) rgba(0,0,0,0.55) rgba(0,0,0,0.55) rgba(255,255,255,0.95);
-  box-shadow: 1px 1px 0 var(--carbon-black);
+  border: 2px solid var(--carbon-black);
+  box-shadow: 2px 2px 0 var(--carbon-black);
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.75rem;
   text-decoration: none;
@@ -175,16 +338,15 @@ body {
 }
 
 .nav-btn:hover {
-  background: var(--lightest-gray);
-  color: var(--carbon-black);
+  background: var(--carbon-black);
+  color: var(--butter);
   text-decoration: none;
 }
 
 .nav-btn.active {
-  border-color: rgba(0,0,0,0.45) rgba(255,255,255,0.85) rgba(255,255,255,0.85) rgba(0,0,0,0.45);
-  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);
-  background: var(--lightest-gray);
-  color: var(--carbon-black);
+  background: var(--carbon-black);
+  color: var(--soft-white);
+  box-shadow: none;
 }
 
 /* Site Footer */
@@ -208,7 +370,7 @@ body {
 .site-footer-copy {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.9rem;
-  color: var(--graphite);
+  color: var(--butter);
   letter-spacing: 0.04em;
 }
 
@@ -248,7 +410,7 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  color: var(--lightest-gray);
+  color: var(--cool-gray);
   text-decoration: none;
 }
 
@@ -259,7 +421,7 @@ nav a.active {
   overflow: hidden;
   height: 40px;
   flex-shrink: 0;
-  background: var(--soft-white);
+  background: var(--butter);
 }
 
 .marquee-wrapper {
@@ -331,7 +493,6 @@ footer {
 }
 
 .home-name {
-  text-transform: none;
   font-family: 'Masaaki', sans-serif;
   font-size: 4rem;
   font-weight: 500;
@@ -365,9 +526,8 @@ footer {
   display: inline-block;
   padding: 5px 10px;
   background: var(--soft-white);
-  border: 2px solid;
-  border-color: rgba(255,255,255,0.95) rgba(0,0,0,0.55) rgba(0,0,0,0.55) rgba(255,255,255,0.95);
-  box-shadow: 1px 1px 0 var(--carbon-black);
+  border: 2px solid var(--carbon-black);
+  box-shadow: 2px 2px 0 var(--carbon-black);
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.75rem;
   text-decoration: none;
@@ -376,7 +536,8 @@ footer {
 }
 
 .home-cta:hover {
-  background: var(--lightest-gray);
+  background: var(--carbon-black);
+  color: var(--soft-white);
 }
 
 .home-hero-image {
@@ -422,7 +583,6 @@ footer {
 }
 
 .about-heading {
-  text-transform: none;
   font-family: 'Masaaki', sans-serif;
   font-size: 2.8rem;
   letter-spacing: 0.08em;
@@ -433,7 +593,6 @@ footer {
 }
 
 .services-heading {
-  text-transform: none;
   font-family: 'Masaaki', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
@@ -473,17 +632,16 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 2.2rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.12);
+  border-bottom: 1px solid rgba(26,86,200,0.2);
 }
 
 .service-item:first-of-type {
-  border-top: 1px solid rgba(0,0,0,0.12);
+  border-top: 1px solid rgba(26,86,200,0.2);
 }
 
 .service-info h3 {
   font-size: 0.85rem;
   letter-spacing: 0.06em;
-  text-transform: lowercase;
   font-weight: 500;
   color: var(--carbon-black);
   margin-bottom: 0.7rem;
@@ -517,7 +675,7 @@ footer {
 
 .price-dots {
   flex: 1;
-  border-bottom: 1px dotted rgba(0,0,0,0.2);
+  border-bottom: 1px dotted rgba(26,86,200,0.3);
   margin-bottom: 3px;
 }
 
