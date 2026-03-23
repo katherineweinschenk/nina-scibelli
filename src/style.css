@@ -94,7 +94,7 @@ body {
    SITE FRAME — DESKTOP / WINDOW / TASKBAR
    ============================================================ */
 .site-window {
-  width: min(1100px, calc(100vw - 40px));
+  width: min(80vw, calc(100vw - 40px));
   height: calc(100vh - 80px);
   border: 2px solid var(--carbon-black);
   box-shadow: 4px 4px 0 rgba(0,0,0,0.45), inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.08);
@@ -313,6 +313,8 @@ footer {
 }
 
 .home-intro {
+  flex: 1 1 40%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -343,7 +345,7 @@ footer {
   margin-top: 0.8rem;
   font-size: 0.95rem;
   line-height: 1.7;
-  max-width: 340px;
+  max-width: 460px;
   color: var(--graphite);
 }
 
@@ -367,8 +369,10 @@ footer {
 }
 
 .home-hero-image {
-  width: auto;
-  height: 400px;
+  flex: 1 1 50%;
+  min-width: 0;
+  width: 100%;
+  max-height: 500px;
   object-fit: cover;
   display: block;
 }
@@ -386,16 +390,23 @@ footer {
 
 .about-main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  gap: 3rem;
   gap: 1.8rem;
   width: 100%;
 }
 
+.about-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .about-portrait {
-  width: 218px;
-  height: 218px;
+  width: 280px;
+  height: auto;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .about-heading {
@@ -404,6 +415,7 @@ footer {
   color: var(--carbon-black);
   line-height: 1;
   font-weight: 500;
+  padding-bottom: 2rem;
 }
 
 .services-heading {
@@ -515,5 +527,15 @@ footer {
     width: 100%;
     max-width: 376px;
     height: 220px;
+  }
+
+  .about-main {
+    flex-direction: column;
+  }
+
+  .about-portrait {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
   }
 }
