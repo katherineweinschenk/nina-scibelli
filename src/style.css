@@ -591,17 +591,27 @@ footer {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 700px) {
+  .site-window-body {
+    flex-direction: column-reverse;
+  }
+
+  .site-nav-panel {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-left: none;
+    border-bottom: 2px solid var(--carbon-black);
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .nav-info {
+    display: none;
+  }
+
   .service-item {
     grid-template-columns: 1fr;
     gap: 0.8rem;
-  }
-
-  header {
-    padding: 0.8rem 1.2rem;
-  }
-
-  nav {
-    gap: 1.5rem;
   }
 
   .home-hero-image {
