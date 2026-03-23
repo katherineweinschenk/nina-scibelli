@@ -21,6 +21,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Overbit';
+  src: url('/Overbit.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ============================================================
    CSS VARIABLES — color palette
    ============================================================ */
@@ -323,7 +330,7 @@ body {
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
-  font-family: 'Masaaki', Geneva, sans-serif;
+  font-family: 'Overbit', Geneva, sans-serif;
 }
 
 @keyframes marquee {
@@ -352,12 +359,13 @@ body {
 }
 
 .home-name {
-  font-family: 'Masaaki', sans-serif;
+  font-family: 'Overbit', sans-serif;
   font-size: 5rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 1;
   color: var(--carbon-black);
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000, 5px 5px 0 #000;
   padding-bottom: 1rem;
 }
 
@@ -442,7 +450,7 @@ body {
 }
 
 .about-heading {
-  font-family: 'Masaaki', sans-serif;
+  font-family: 'Overbit', sans-serif;
   font-size: 2.8rem;
   letter-spacing: 0.08em;
   color: var(--carbon-black);
@@ -450,16 +458,18 @@ body {
   font-weight: 500;
   padding-bottom: 2rem;
   text-align: left;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000, 5px 5px 0 #000;
 }
 
 .services-heading {
-  font-family: 'Masaaki', sans-serif;
+  font-family: 'Overbit', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
   color: var(--carbon-black);
   line-height: 1;
   font-weight: 500;
   margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000;
 }
 
 .about-body {
