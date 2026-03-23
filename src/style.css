@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@800&display=swap');
 
 @font-face {
   font-family: 'Tahoma';
@@ -14,7 +14,8 @@
   --soft-linen:   #F6F6F6;
   --tuscan-sun:   #F5CB5C;
   --carbon-black: #242423;
-  --graphite:     #727272;
+  --graphite:     #333533;
+  --cool-gray:    #727272;
 }
 
 /* ============================================================
@@ -27,14 +28,20 @@
 }
 
 body {
-  background-color: var(--soft-linen);
+  background-color: var(--graphite);
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.04) 1px, transparent 0);
+  background-size: 16px 16px;
   color: var(--carbon-black);
-  font-family: 'Geist', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   line-height: 1.7;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 20px 0;
 }
 
 .sparkle-particle {
@@ -72,7 +79,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Tahoma', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.72rem;
   user-select: none;
 }
@@ -96,7 +103,7 @@ body {
   border: 1px solid var(--carbon-black);
   width: 16px;
   height: 14px;
-  font-family: 'Tahoma', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.6rem;
   box-shadow: inset -1px -1px 0 rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.5);
 }
@@ -111,11 +118,222 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--soft-linen);
-  font-family: 'Tahoma', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
   font-size: 0.88rem;
   text-align: center;
   padding: 1.5rem;
+}
+
+/* ============================================================
+   SITE FRAME — DESKTOP / WINDOW / TASKBAR
+   ============================================================ */
+.site-window {
+  width: min(1100px, calc(100vw - 40px));
+  height: calc(100vh - 80px);
+  border: 2px solid var(--carbon-black);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.45), inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  background: var(--soft-linen);
+  position: relative;
+  z-index: 10;
+}
+
+.site-titlebar {
+  background: linear-gradient(90deg, var(--graphite) 0%, var(--carbon-black) 100%);
+  color: var(--soft-linen);
+  padding: 4px 6px 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.site-window-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.site-content-area {
+  flex: 1;
+  overflow-y: auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content-area main {
+  flex: 1;
+}
+
+/* Right-side navigation panel */
+.site-nav-panel {
+  width: 180px;
+  flex-shrink: 0;
+  border-left: 2px solid var(--carbon-black);
+  background: var(--soft-linen);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 8px;
+}
+
+.nav-btn {
+  display: block;
+  padding: 5px 10px;
+  background: var(--soft-linen);
+  border: 2px solid;
+  border-color: rgba(255,255,255,0.95) rgba(0,0,0,0.55) rgba(0,0,0,0.55) rgba(255,255,255,0.95);
+  box-shadow: 1px 1px 0 var(--carbon-black);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: var(--carbon-black);
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-btn:hover {
+  background: var(--tuscan-sun);
+  color: var(--carbon-black);
+  text-decoration: none;
+}
+
+.nav-btn.active {
+  border-color: rgba(0,0,0,0.45) rgba(255,255,255,0.85) rgba(255,255,255,0.85) rgba(0,0,0,0.45);
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);
+  background: var(--tuscan-sun);
+  color: var(--carbon-black);
+}
+
+.nav-spacer {
+  height: 8px;
+}
+
+/* Taskbar */
+.site-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--soft-linen);
+  border-top: 2px solid var(--carbon-black);
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  gap: 4px;
+  z-index: 1000;
+}
+
+.taskbar-start {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--carbon-black);
+  color: var(--soft-linen);
+  padding: 3px 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: 2px solid;
+  border-color: rgba(255,255,255,0.15) rgba(0,0,0,0.6) rgba(0,0,0,0.6) rgba(255,255,255,0.15);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  height: 30px;
+  user-select: none;
+}
+
+.taskbar-start svg {
+  flex-shrink: 0;
+}
+
+.taskbar-app {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: var(--soft-linen);
+  border: 2px solid;
+  border-color: rgba(255,255,255,0.8) rgba(0,0,0,0.4) rgba(0,0,0,0.4) rgba(255,255,255,0.8);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.72rem;
+  height: 30px;
+  min-width: 160px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.taskbar-app.active {
+  border-color: rgba(0,0,0,0.3) rgba(255,255,255,0.8) rgba(255,255,255,0.8) rgba(0,0,0,0.3);
+  background: var(--tuscan-sun);
+}
+
+.taskbar-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--carbon-black);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.taskbar-tray {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px 0 12px;
+  height: 100%;
+}
+
+.taskbar-tray-copy {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
+  color: var(--graphite);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.nav-info {
+  padding: 8px 0;
+  border-top: 1px solid var(--carbon-black);
+}
+
+.nav-info-label {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cool-gray);
+  margin-bottom: 4px;
+}
+
+.nav-info-text {
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--carbon-black);
+}
+
+.nav-info-text a {
+  color: var(--carbon-black);
+  word-break: break-all;
+}
+
+.site-nav-panel .sidebar-window--spaced {
+  margin-top: 0;
 }
 
 /* ============================================================
@@ -125,67 +343,81 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 1.1rem 2.5rem;
   background-color: var(--soft-linen);
   position: sticky;
   top: 0;
   z-index: 200;
+  border-bottom: 1px solid var(--carbon-black);
 }
 
 .site-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--carbon-black);
   text-decoration: none;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 .site-title:hover {
-  text-decoration: underline;
+  color: var(--tuscan-sun);
 }
 
 nav {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 nav a {
   color: var(--carbon-black);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.05em;
 }
 
 nav a:hover,
 nav a.active {
-  color: var(--graphite);
-  text-decoration: underline;
+  color: var(--tuscan-sun);
+  text-decoration: none;
 }
 
 /* ============================================================
    MARQUEE
    ============================================================ */
-.marquee-wrapper {
+.marquee-slot {
   overflow: hidden;
-  padding: 0.7rem 0;
-  white-space: nowrap;
+  height: 22px;
+  flex-shrink: 0;
+  background: var(--soft-linen);
+}
+
+.marquee-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 2px;
 }
 
 .marquee-track {
-  display: inline-flex;
-  animation: marquee-scroll 18s linear infinite;
-}
-
-.marquee-content {
+  display: flex;
   white-space: nowrap;
-  padding: 0 3rem;
-  font-size: 2rem;
-  color: var(--tuscan-sun);
-  letter-spacing: 0.08em;
+  animation: marquee 40s linear infinite;
 }
 
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+.marquee-item {
+  font-size: 0.8rem;
+  color: var(--cool-gray);
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 /* ============================================================
@@ -193,15 +425,25 @@ nav a.active {
    ============================================================ */
 main {
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 footer {
-  text-align: center;
-  padding: 1.2rem 2rem;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  font-size: 0.75rem;
   color: var(--graphite);
-  border-top: 2px solid var(--carbon-black);
   letter-spacing: 0.06em;
+  border-top: 1px solid var(--carbon-black);
+}
+
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 /* ============================================================
@@ -215,40 +457,27 @@ footer {
   padding: 3rem 2rem;
 }
 
-.home-hero-image {
-  width: 376px;
-  height: 276px;
-}
-
-.home-nav-links {
+.home-win98-frame {
+  position: relative;
+  z-index: 1;
+  width: min(840px, 100%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.1rem;
 }
 
-.home-nav-links a {
-  font-size: 3rem;
-  color: var(--carbon-black);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
-}
-
-.home-nav-links a:hover {
-  color: var(--graphite);
-  text-decoration: underline;
+.home-hero-image {
+  width: 100%;
+  height: 540px;
 }
 
 .pride-flag {
-  width: 160px;
-  height: 100px;
-  object-fit: cover;
-  border: 2px solid var(--carbon-black);
-  border-radius: 4px;
-  box-shadow: 2px 2px 0 var(--graphite);
-  flex-shrink: 0;
+  width: 100%;
+  height: auto;
   display: block;
+}
+
+.site-nav-panel .pride-flag {
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -276,11 +505,11 @@ footer {
 
 .about-heading,
 .services-heading {
-  font-size: 5rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 0.08em;
   color: var(--carbon-black);
   line-height: 1;
+  font-weight: 500;
 }
 
 .about-heading {
@@ -293,18 +522,6 @@ footer {
   font-size: 1rem;
 }
 
-.about-contact {
-  text-align: center;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-}
-
-.about-contact a,
-.services-contact a {
-  color: var(--graphite);
-  text-decoration: underline;
-}
-
 /* ============================================================
    SERVICES PAGE
    ============================================================ */
@@ -314,9 +531,9 @@ footer {
 
 .services-layout {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   align-items: flex-start;
-  max-width: 880px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -326,7 +543,7 @@ footer {
 }
 
 .services-heading {
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .service-item {
@@ -342,18 +559,17 @@ footer {
 }
 
 .service-info h3 {
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  font-weight: normal;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  font-weight: 500;
   color: var(--carbon-black);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 
 .service-description {
-  font-size: 0.9rem;
-  color: var(--graphite);
-  font-style: italic;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  color: var(--cool-gray);
+  line-height: 1.6;
 }
 
 .service-pricing {
@@ -395,16 +611,22 @@ footer {
    SLIDING SCALE SIDEBAR
    ============================================================ */
 .sliding-scale-sidebar {
-  width: 210px;
+  width: 240px;
   flex-shrink: 0;
   position: sticky;
   top: 5rem;
+  padding-top: 4rem;
+  padding-left: 2rem;
 }
 
 .sidebar-window {
   border: 2px solid var(--carbon-black);
   box-shadow: 3px 3px 0 var(--graphite);
   overflow: hidden;
+}
+
+.sidebar-window--spaced {
+  margin-top: 2rem;
 }
 
 .sidebar-titlebar {
@@ -419,12 +641,14 @@ footer {
 
 .sidebar-content {
   background-color: var(--tuscan-sun);
-  padding: 1rem;
-  font-family: 'Tahoma', sans-serif;
-  font-size: 0.83rem;
+  padding: 1.4rem 1.2rem;
+  font-size: 0.8rem;
   line-height: 1.7;
   color: var(--carbon-black);
-  font-style: italic;
+}
+
+.sidebar-content a {
+  color: var(--carbon-black);
 }
 
 /* ============================================================
