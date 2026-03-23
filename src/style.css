@@ -15,14 +15,15 @@
 }
 
 /* ============================================================
-   CSS VARIABLES — four-color palette
+   CSS VARIABLES — color palette
    ============================================================ */
 :root {
-  --soft-linen:   #F6F6F6;
-  --tuscan-sun:   #F5CB5C;
-  --carbon-black: #242423;
-  --graphite:     #333533;
-  --cool-gray:    #727272;
+  --soft-white:      #eeeae7;
+  --lightest-gray:   #dfdfdf;
+  --carbon-black:    #242423;
+  --graphite:        #333533;
+  --cool-gray:       #727272;
+  --butter:          #efde9c;
 }
 
 /* ============================================================
@@ -35,9 +36,9 @@
 }
 
 body {
-  background-color: var(--graphite);
-  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.04) 1px, transparent 0);
-  background-size: 16px 16px;
+  background-color: var(--butter);
+  background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.12) 1.2px, transparent 0);
+  background-size: 24px 24px;
   color: var(--carbon-black);
   font-family: 'ChicagoFLF', sans-serif;
   font-size: 17px;
@@ -79,7 +80,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--soft-linen);
+  background: var(--soft-white);
   color: var(--carbon-black);
   border: 1px solid var(--carbon-black);
   width: 16px;
@@ -99,14 +100,14 @@ body {
   box-shadow: 4px 4px 0 rgba(0,0,0,0.45), inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.08);
   display: flex;
   flex-direction: column;
-  background: var(--soft-linen);
+  background: var(--soft-white);
   position: relative;
   z-index: 10;
 }
 
 .site-titlebar {
   background: linear-gradient(90deg, var(--graphite) 0%, var(--carbon-black) 100%);
-  color: var(--soft-linen);
+  color: var(--soft-white);
   padding: 4px 6px 4px 8px;
   display: flex;
   justify-content: space-between;
@@ -139,8 +140,7 @@ body {
 
 .site-nav-panel {
   flex-shrink: 0;
-  border-bottom: 2px solid var(--carbon-black);
-  background: var(--soft-linen);
+  background: var(--soft-white);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -151,7 +151,7 @@ body {
 .nav-btn {
   display: block;
   padding: 5px 10px;
-  background: var(--soft-linen);
+  background: var(--soft-white);
   border: 2px solid;
   border-color: rgba(255,255,255,0.95) rgba(0,0,0,0.55) rgba(0,0,0,0.55) rgba(255,255,255,0.95);
   box-shadow: 1px 1px 0 var(--carbon-black);
@@ -166,7 +166,7 @@ body {
 }
 
 .nav-btn:hover {
-  background: var(--tuscan-sun);
+  background: var(--lightest-gray);
   color: var(--carbon-black);
   text-decoration: none;
 }
@@ -174,101 +174,33 @@ body {
 .nav-btn.active {
   border-color: rgba(0,0,0,0.45) rgba(255,255,255,0.85) rgba(255,255,255,0.85) rgba(0,0,0,0.45);
   box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);
-  background: var(--tuscan-sun);
+  background: var(--lightest-gray);
   color: var(--carbon-black);
 }
 
-/* Taskbar */
-.site-taskbar {
+/* Site Footer */
+.site-footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   right: 0;
-  height: 40px;
-  background: var(--soft-linen);
-  border-top: 2px solid var(--carbon-black);
   display: flex;
   align-items: center;
-  padding: 0 5px;
-  gap: 4px;
+  gap: 8px;
+  padding: 8px 16px;
   z-index: 1000;
 }
 
-.taskbar-start {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--carbon-black);
-  color: var(--soft-linen);
-  padding: 3px 12px;
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 0.75rem;
-  font-weight: bold;
-  border: 2px solid;
-  border-color: rgba(255,255,255,0.15) rgba(0,0,0,0.6) rgba(0,0,0,0.6) rgba(255,255,255,0.15);
-  cursor: pointer;
-  letter-spacing: 0.04em;
-  height: 30px;
-  user-select: none;
-}
-
-.taskbar-start svg {
-  flex-shrink: 0;
-}
-
-.taskbar-app {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  background: var(--soft-linen);
-  border: 2px solid;
-  border-color: rgba(255,255,255,0.8) rgba(0,0,0,0.4) rgba(0,0,0,0.4) rgba(255,255,255,0.8);
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 0.9rem;
-  height: 30px;
-  min-width: 160px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.taskbar-app.active {
-  border-color: rgba(0,0,0,0.3) rgba(255,255,255,0.8) rgba(255,255,255,0.8) rgba(0,0,0,0.3);
-  background: var(--tuscan-sun);
-}
-
-.taskbar-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--carbon-black);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.taskbar-pride-flag {
+.site-footer-flag {
   height: 24px;
   width: auto;
   display: block;
 }
 
-.taskbar-tray {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 8px 0 12px;
-  height: 100%;
-}
-
-.taskbar-tray-copy {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
+.site-footer-copy {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.9rem;
   color: var(--graphite);
   letter-spacing: 0.04em;
-  line-height: 1.4;
 }
 
 .services-footer-info {
@@ -286,7 +218,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.1rem 2.5rem;
-  background-color: var(--soft-linen);
+  background-color: var(--soft-white);
   position: sticky;
   top: 0;
   z-index: 200;
@@ -307,7 +239,7 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  color: var(--tuscan-sun);
+  color: var(--lightest-gray);
   text-decoration: none;
 }
 
@@ -318,7 +250,7 @@ nav a.active {
   overflow: hidden;
   height: 40px;
   flex-shrink: 0;
-  background: var(--soft-linen);
+  background: var(--soft-white);
 }
 
 .marquee-wrapper {
@@ -336,9 +268,8 @@ nav a.active {
 }
 
 .marquee-item {
-  font-size: 0.9rem;
-  color: var(--tuscan-sun);
-  padding: 0 8px;
+  font-size: 1.2rem;
+  color: var(--cool-gray);
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
@@ -420,7 +351,7 @@ footer {
   margin-top: 0.6rem;
   display: inline-block;
   padding: 5px 10px;
-  background: var(--soft-linen);
+  background: var(--soft-white);
   border: 2px solid;
   border-color: rgba(255,255,255,0.95) rgba(0,0,0,0.55) rgba(0,0,0,0.55) rgba(255,255,255,0.95);
   box-shadow: 1px 1px 0 var(--carbon-black);
@@ -432,7 +363,7 @@ footer {
 }
 
 .home-cta:hover {
-  background: var(--tuscan-sun);
+  background: var(--lightest-gray);
 }
 
 .home-hero-image {
@@ -458,7 +389,6 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.8rem;
-  max-width: 800px;
   width: 100%;
 }
 
@@ -499,7 +429,6 @@ footer {
    ============================================================ */
 .services-outer {
   padding: 3rem 2.5rem 4rem;
-  max-width: 800px;
 }
 
 .services-main-content {
@@ -542,6 +471,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  padding-top: 2rem;
 }
 
 .price-row {
