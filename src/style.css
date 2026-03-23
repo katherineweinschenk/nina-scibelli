@@ -118,16 +118,6 @@ body {
   60%  { transform: translateY(-6px) rotate(2deg); }
 }
 
-@keyframes bounceFloat {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%  { transform: translateY(-22px) scale(1.05); }
-}
-
-@keyframes swayGently {
-  0%, 100% { transform: rotate(-4deg) translateY(0); }
-  50%  { transform: rotate(4deg) translateY(-12px); }
-}
-
 /* --- Placed fern instances --- */
 .pixel-sprite--fern1 {
   bottom: 2%;
@@ -304,39 +294,6 @@ body {
 }
 
 /* ============================================================
-   HEADER
-   ============================================================ */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.1rem 2.5rem;
-  background-color: var(--soft-white);
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  border-bottom: 1px solid var(--carbon-black);
-}
-
-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-nav a {
-  color: var(--carbon-black);
-  text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--cool-gray);
-  text-decoration: none;
-}
-
-/* ============================================================
    MARQUEE
    ============================================================ */
 .marquee-slot {
@@ -372,26 +329,6 @@ nav a.active {
 @keyframes marquee {
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
-}
-
-/* ============================================================
-   LAYOUT SHELL
-   ============================================================ */
-main {
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem 2.5rem;
-  font-size: 0.75rem;
-  color: var(--graphite);
-  letter-spacing: 0.06em;
-  border-top: 1px solid var(--carbon-black);
 }
 
 /* ============================================================
@@ -487,7 +424,6 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 3rem;
   gap: 1.8rem;
   width: 100%;
 }
@@ -513,6 +449,7 @@ footer {
   line-height: 1;
   font-weight: 500;
   padding-bottom: 2rem;
+  text-align: left;
 }
 
 .services-heading {
@@ -522,10 +459,7 @@ footer {
   color: var(--carbon-black);
   line-height: 1;
   font-weight: 500;
-}
-
-.about-heading {
-  text-align: left;
+  margin-bottom: 2.5rem;
 }
 
 .about-body {
@@ -544,10 +478,6 @@ footer {
 .services-main-content {
   flex: 1;
   min-width: 0;
-}
-
-.services-heading {
-  margin-bottom: 2.5rem;
 }
 
 .service-item {
