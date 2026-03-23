@@ -65,14 +65,15 @@ body {
   z-index: 9999;
   user-select: none;
   transform: translate(-50%, -50%);
-  animation: sparkle-anim 0.7s ease-out forwards;
+  animation: sparkle-anim 0.5s ease-out forwards;
   line-height: 1;
 }
 
 @keyframes sparkle-anim {
-  0%   { opacity: 1;   transform: translate(-50%, -50%) scale(1)   rotate(0deg); }
-  60%  { opacity: 0.6; }
-  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0.1) rotate(200deg); }
+  0%   { opacity: 1;   transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  30%  { opacity: 0.9; transform: translate(-50%, -50%) scale(1.2) rotate(90deg); }
+  60%  { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8) rotate(180deg); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0) rotate(360deg); }
 }
 
 /* ============================================================

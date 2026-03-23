@@ -1,28 +1,32 @@
-const SPARKLE_CHARS = ['✦', '✶', '✸', '✺', '⋆'];
-const SPARKLE_COLORS = ['#F5CB5C', '#E8EDDF', '#F5CB5C', '#333533', '#F5CB5C'];
+const GLITTER_CHARS = ['✦', '✧', '·'];
+const GLITTER_COLORS = ['#ffffff', '#d8d8d8', '#c0c0c0'];
 let lastSparkle = 0;
 
 document.addEventListener('mousemove', (e) => {
   const now = Date.now();
-  if (now - lastSparkle > 60) {
+  if (now - lastSparkle > 20) {
     lastSparkle = now;
-    spawnSparkle(e.clientX, e.clientY);
+    const count = Math.floor(Math.random() * 2) + 2;
+    for (let i = 0; i < count; i++) {
+      spawnGlitter(e.clientX, e.clientY);
+    }
   }
 });
 
-function spawnSparkle(x, y) {
+function spawnGlitter(x, y) {
   const el = document.createElement('div');
   el.className = 'sparkle-particle';
-  el.textContent = SPARKLE_CHARS[Math.floor(Math.random() * SPARKLE_CHARS.length)];
+  el.textContent = GLITTER_CHARS[Math.floor(Math.random() * GLITTER_CHARS.length)];
 
   const offsetX = (Math.random() - 0.5) * 24;
   const offsetY = (Math.random() - 0.5) * 24;
 
   el.style.left = (x + offsetX) + 'px';
   el.style.top = (y + offsetY) + 'px';
-  el.style.color = SPARKLE_COLORS[Math.floor(Math.random() * SPARKLE_COLORS.length)];
-  el.style.fontSize = (Math.random() * 10 + 8) + 'px';
+  el.style.color = GLITTER_COLORS[Math.floor(Math.random() * GLITTER_COLORS.length)];
+  el.style.fontSize = '7px';
+  el.style.textShadow = '0 0 4px rgba(255,255,255,0.9), 0 0 8px rgba(200,200,200,0.5)';
 
   document.body.appendChild(el);
-  setTimeout(() => el.remove(), 700);
+  setTimeout(() => el.remove(), 500);
 }
