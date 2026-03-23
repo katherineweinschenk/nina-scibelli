@@ -79,7 +79,6 @@ body {
   60%  { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8) rotate(180deg); }
   100% { opacity: 0;   transform: translate(-50%, -50%) scale(0) rotate(360deg); }
 }
-
 /* ============================================================
    LANDSCAPE BACKGROUND
    ============================================================ */

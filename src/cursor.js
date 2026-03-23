@@ -30,3 +30,16 @@ function spawnGlitter(x, y) {
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 500);
 }
+
+/* --- Ambient rock glitter --- */
+function spawnRockGlitter() {
+  const rock = document.querySelector('.pixel-sprite--rock');
+  if (!rock) return;
+
+  const rect = rock.getBoundingClientRect();
+  const x = rect.left + rect.width * (0.25 + Math.random() * 0.5);
+  const y = rect.top + rect.height * (0.15 + Math.random() * 0.4);
+  spawnGlitter(x, y);
+}
+
+setInterval(spawnRockGlitter, 80);
