@@ -25,12 +25,13 @@
    CSS VARIABLES — color palette
    ============================================================ */
 :root {
-  --soft-white:      #ffffff;
-  --lightest-gray:   #e5e7eb;
-  --carbon-black:    #1a56c8;
-  --graphite:        #1a56c8;
-  --cool-gray:       #4a7fd4;
-  --butter:          #f3f4e6;
+  --soft-white:      #ECE9DF;
+  --lightest-gray:   #779BAD;
+  --carbon-black:    #255551;
+  --graphite:        #255551;
+  --cool-gray:       #779BAD;
+  --sunrise:         #EECB8E;
+  --sunset:          #DC8672;
 }
 
 /* ============================================================
@@ -43,7 +44,7 @@
 }
 
 body {
-  background-color: #bce6ff;
+  background-color: var(--soft-white);
   color: var(--carbon-black);
   font-family: 'Jersey 15', sans-serif;
   font-size: 1rem;
@@ -87,92 +88,18 @@ body {
 .landscape-sky {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(45deg, rgba(200,215,230,0.25) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(200,215,230,0.25) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(200,215,230,0.25) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(200,215,230,0.25) 75%),
-    linear-gradient(to bottom, #bce6ff 0%, #d4edff 50%, #f3f4e6 100%);
-  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100%;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px, 0 0;
+  background: linear-gradient(to bottom, #EECB8E 0%, #DC8672 25%, #779BAD 55%, #ECE9DF 90%);
 }
-
-.landscape-mountains-back {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-  width: 25%;
-  height: 180px;
-  background: #6ca5d8;
-  opacity: 0.7;
-  clip-path: polygon(0% 100%, 10% 70%, 25% 40%, 40% 20%, 55% 35%, 70% 60%, 85% 50%, 100% 100%);
-}
-
-.landscape-mountains-back-right {
-  position: absolute;
-  bottom: 50px;
-  right: 0;
-  width: 20%;
-  height: 150px;
-  background: #6ca5d8;
-  opacity: 0.7;
-  clip-path: polygon(0% 100%, 20% 60%, 40% 25%, 60% 15%, 80% 40%, 100% 100%);
-}
-
-.landscape-mountains-front {
-  position: absolute;
-  bottom: 40px;
-  left: 0;
-  width: 20%;
-  height: 160px;
-  background: #427ab0;
-  opacity: 0.8;
-  clip-path: polygon(0% 100%, 15% 50%, 30% 20%, 45% 10%, 60% 30%, 75% 55%, 100% 100%);
-}
-
-.landscape-mountains-front-right {
-  position: absolute;
-  bottom: 40px;
-  right: 0;
-  width: 18%;
-  height: 130px;
-  background: #427ab0;
-  opacity: 0.8;
-  clip-path: polygon(0% 100%, 25% 50%, 45% 15%, 65% 25%, 85% 55%, 100% 100%);
-}
-
-.landscape-ground {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background: #1a401c;
-  border-top: 4px solid #0c2b0e;
-}
-
-.landscape-tree {
-  position: absolute;
-  bottom: 100%;
-  background: #0c2b0e;
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-}
-
-.landscape-tree--1 { left: 2%; width: 24px; height: 50px; }
-.landscape-tree--2 { left: 5%; width: 30px; height: 65px; background: #1a401c; }
-.landscape-tree--3 { left: 9%; width: 20px; height: 40px; }
-.landscape-tree--4 { right: 3%; width: 26px; height: 55px; background: #1a401c; }
-.landscape-tree--5 { right: 7%; width: 20px; height: 42px; }
-.landscape-tree--6 { right: 10%; width: 28px; height: 60px; background: #1a401c; }
 
 .landscape-cloud {
   position: absolute;
-  background: white;
+  background: rgba(236,233,223,0.85);
   z-index: 1;
   clip-path: polygon(20% 100%, 20% 60%, 0% 60%, 0% 40%, 20% 40%, 20% 20%, 40% 20%, 40% 0%, 70% 0%, 70% 20%, 90% 20%, 90% 40%, 100% 40%, 100% 70%, 90% 70%, 90% 100%);
 }
 
 .landscape-cloud--1 {
-  top: 10%;
+  top: 8%;
   width: 128px;
   height: 48px;
   opacity: 0.9;
@@ -180,7 +107,7 @@ body {
 }
 
 .landscape-cloud--2 {
-  top: 25%;
+  top: 22%;
   width: 192px;
   height: 64px;
   opacity: 0.8;
@@ -190,7 +117,7 @@ body {
 }
 
 .landscape-cloud--3 {
-  top: 18%;
+  top: 15%;
   width: 160px;
   height: 56px;
   opacity: 0.75;
@@ -200,7 +127,7 @@ body {
 }
 
 .landscape-cloud--4 {
-  top: 6%;
+  top: 5%;
   width: 100px;
   height: 36px;
   opacity: 0.85;
@@ -209,7 +136,7 @@ body {
 }
 
 .landscape-cloud--5 {
-  top: 32%;
+  top: 30%;
   width: 140px;
   height: 50px;
   opacity: 0.7;
@@ -219,7 +146,7 @@ body {
 }
 
 .landscape-cloud--6 {
-  top: 14%;
+  top: 12%;
   width: 180px;
   height: 60px;
   opacity: 0.65;
@@ -229,7 +156,7 @@ body {
 }
 
 .landscape-cloud--7 {
-  top: 38%;
+  top: 36%;
   width: 110px;
   height: 40px;
   opacity: 0.8;
@@ -237,10 +164,40 @@ body {
   animation-delay: -18s;
 }
 
+.landscape-cloud--8 {
+  top: 3%;
+  width: 150px;
+  height: 52px;
+  opacity: 0.7;
+  animation: moveCloud 28s linear infinite;
+  animation-delay: -15s;
+  clip-path: polygon(10% 100%, 10% 70%, 0% 70%, 0% 30%, 15% 30%, 15% 15%, 35% 15%, 35% 0%, 65% 0%, 65% 20%, 85% 20%, 85% 40%, 100% 40%, 100% 80%, 90% 80%, 90% 100%);
+}
+
+.landscape-cloud--9 {
+  top: 42%;
+  width: 170px;
+  height: 58px;
+  opacity: 0.6;
+  animation: moveCloud 38s linear infinite;
+  animation-delay: -25s;
+}
+
+.landscape-cloud--10 {
+  top: 18%;
+  width: 120px;
+  height: 44px;
+  opacity: 0.75;
+  animation: moveCloud 33s linear infinite;
+  animation-delay: -10s;
+  clip-path: polygon(15% 100%, 15% 65%, 5% 65%, 5% 40%, 20% 40%, 20% 20%, 45% 20%, 45% 5%, 75% 5%, 75% 25%, 90% 25%, 90% 50%, 100% 50%, 100% 85%, 85% 85%, 85% 100%);
+}
+
 @keyframes moveCloud {
   0%   { transform: translateX(-200px); }
   100% { transform: translateX(100vw); }
 }
+
 
 /* ============================================================
    WINDOWS 98-STYLE FRAMES
@@ -273,14 +230,14 @@ body {
   box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  background: var(--butter);
+  background: var(--soft-white);
   position: relative;
   z-index: 10;
 }
 
 .site-titlebar {
   background: var(--carbon-black);
-  color: var(--butter);
+  color: var(--soft-white);
   padding: 4px 6px 4px 8px;
   display: flex;
   justify-content: space-between;
@@ -313,7 +270,7 @@ body {
 
 .site-nav-panel {
   flex-shrink: 0;
-  background: var(--butter);
+  background: var(--soft-white);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -339,7 +296,7 @@ body {
 
 .nav-btn:hover {
   background: var(--carbon-black);
-  color: var(--butter);
+  color: var(--soft-white);
   text-decoration: none;
 }
 
@@ -370,7 +327,7 @@ body {
 .site-footer-copy {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.9rem;
-  color: var(--butter);
+  color: var(--carbon-black);
   letter-spacing: 0.04em;
 }
 
@@ -421,7 +378,7 @@ nav a.active {
   overflow: hidden;
   height: 40px;
   flex-shrink: 0;
-  background: var(--butter);
+  background: var(--soft-white);
 }
 
 .marquee-wrapper {
