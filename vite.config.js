@@ -26,6 +26,7 @@ function layoutPlugin() {
 }
 
 export default defineConfig({
+  base: '/nina-scibelli/',
   plugins: [layoutPlugin()],
   build: {
     rollupOptions: {
