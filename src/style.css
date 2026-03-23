@@ -32,7 +32,7 @@
    CSS VARIABLES — color palette
    ============================================================ */
 :root {
-  --yellow:     #fffbd4;
+  --yellow:     #fff9c6;
   --pale-pink:  #dba9b7;
   --cool-stone: #7f949b;
   --mist:       #EDEEED;
@@ -95,7 +95,112 @@ body {
   background: var(--yellow)
 }
 
+.landscape-cloud {
+  position: absolute;
+  background: rgba(255, 254, 249, 0.85);
+  z-index: 1;
+  clip-path: polygon(20% 100%, 20% 60%, 0% 60%, 0% 40%, 20% 40%, 20% 20%, 40% 20%, 40% 0%, 70% 0%, 70% 20%, 90% 20%, 90% 40%, 100% 40%, 100% 70%, 90% 70%, 90% 100%);
+}
 
+.landscape-cloud--1 {
+  top: 8%;
+  width: 128px;
+  height: 48px;
+  opacity: 0.9;
+  animation: moveCloud 30s linear infinite;
+}
+
+.landscape-cloud--2 {
+  top: 22%;
+  width: 192px;
+  height: 64px;
+  opacity: 0.8;
+  animation: moveCloud 20s linear infinite;
+  animation-delay: -5s;
+  clip-path: polygon(10% 100%, 10% 70%, 0% 70%, 0% 30%, 15% 30%, 15% 15%, 35% 15%, 35% 0%, 65% 0%, 65% 20%, 85% 20%, 85% 40%, 100% 40%, 100% 80%, 90% 80%, 90% 100%);
+}
+
+.landscape-cloud--3 {
+  top: 15%;
+  width: 160px;
+  height: 56px;
+  opacity: 0.75;
+  animation: moveCloud 35s linear infinite;
+  animation-delay: -12s;
+  clip-path: polygon(15% 100%, 15% 65%, 5% 65%, 5% 40%, 20% 40%, 20% 20%, 45% 20%, 45% 5%, 75% 5%, 75% 25%, 90% 25%, 90% 50%, 100% 50%, 100% 85%, 85% 85%, 85% 100%);
+}
+
+.landscape-cloud--4 {
+  top: 5%;
+  width: 100px;
+  height: 36px;
+  opacity: 0.85;
+  animation: moveCloud 40s linear infinite;
+  animation-delay: -20s;
+}
+
+.landscape-cloud--5 {
+  top: 30%;
+  width: 140px;
+  height: 50px;
+  opacity: 0.7;
+  animation: moveCloud 25s linear infinite;
+  animation-delay: -8s;
+  clip-path: polygon(10% 100%, 10% 70%, 0% 70%, 0% 30%, 15% 30%, 15% 15%, 35% 15%, 35% 0%, 65% 0%, 65% 20%, 85% 20%, 85% 40%, 100% 40%, 100% 80%, 90% 80%, 90% 100%);
+}
+
+.landscape-cloud--6 {
+  top: 12%;
+  width: 180px;
+  height: 60px;
+  opacity: 0.65;
+  animation: moveCloud 45s linear infinite;
+  animation-delay: -30s;
+  clip-path: polygon(15% 100%, 15% 65%, 5% 65%, 5% 40%, 20% 40%, 20% 20%, 45% 20%, 45% 5%, 75% 5%, 75% 25%, 90% 25%, 90% 50%, 100% 50%, 100% 85%, 85% 85%, 85% 100%);
+}
+
+.landscape-cloud--7 {
+  top: 36%;
+  width: 110px;
+  height: 40px;
+  opacity: 0.8;
+  animation: moveCloud 32s linear infinite;
+  animation-delay: -18s;
+}
+
+.landscape-cloud--8 {
+  top: 3%;
+  width: 150px;
+  height: 52px;
+  opacity: 0.7;
+  animation: moveCloud 28s linear infinite;
+  animation-delay: -15s;
+  clip-path: polygon(10% 100%, 10% 70%, 0% 70%, 0% 30%, 15% 30%, 15% 15%, 35% 15%, 35% 0%, 65% 0%, 65% 20%, 85% 20%, 85% 40%, 100% 40%, 100% 80%, 90% 80%, 90% 100%);
+}
+
+.landscape-cloud--9 {
+  top: 42%;
+  width: 170px;
+  height: 58px;
+  opacity: 0.6;
+  animation: moveCloud 38s linear infinite;
+  animation-delay: -25s;
+}
+
+.landscape-cloud--10 {
+  top: 18%;
+  width: 120px;
+  height: 44px;
+  opacity: 0.75;
+  animation: moveCloud 33s linear infinite;
+  animation-delay: -10s;
+  clip-path: polygon(15% 100%, 15% 65%, 5% 65%, 5% 40%, 20% 40%, 20% 20%, 45% 20%, 45% 5%, 75% 5%, 75% 25%, 90% 25%, 90% 50%, 100% 50%, 100% 85%, 85% 85%, 85% 100%);
+}
+
+@keyframes moveCloud {
+  0%   { transform: translateX(-200px); }
+  100% { transform: translateX(100vw); }
+}
 
 /* ============================================================
    PIXEL ART — SVG FERNS (bouncing / floating)
@@ -282,7 +387,7 @@ body {
    ============================================================ */
 .marquee-slot {
   overflow: hidden;
-  height: 40px;
+  height: 45px;
   flex-shrink: 0;
   background: var(--mist);
 }
@@ -292,7 +397,7 @@ body {
   align-items: center;
   height: 100%;
   overflow: hidden;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .marquee-track {
@@ -307,7 +412,7 @@ body {
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
-  font-family: 'Overbit', Geneva, sans-serif;
+  font-family: 'Jersey 15', sans-serif;
 }
 
 @keyframes marquee {
