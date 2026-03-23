@@ -63,38 +63,12 @@ body {
 /* ============================================================
    WINDOWS 98-STYLE FRAMES
    ============================================================ */
-.win98-frame {
-  border: 2px solid var(--carbon-black);
-  box-shadow: 3px 3px 0 var(--graphite);
-  background: var(--soft-linen);
-  display: inline-flex;
-  flex-direction: column;
-}
-
-.win98-bar,
-.sidebar-titlebar {
-  background: linear-gradient(90deg, var(--graphite) 0%, var(--carbon-black) 100%);
-  color: var(--soft-linen);
-  padding: 3px 6px 3px 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.72rem;
-  user-select: none;
-}
-
-.win98-bar {
-  letter-spacing: 0.05em;
-}
-
 .win98-controls {
   display: flex;
   gap: 3px;
 }
 
-.win98-controls span,
-.sidebar-close {
+.win98-controls span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -104,25 +78,8 @@ body {
   width: 16px;
   height: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   box-shadow: inset -1px -1px 0 rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.5);
-}
-
-.win98-body {
-  padding: 4px;
-}
-
-.img-placeholder {
-  background-color: var(--graphite);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--soft-linen);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-style: italic;
-  font-size: 0.88rem;
-  text-align: center;
-  padding: 1.5rem;
 }
 
 /* ============================================================
@@ -148,7 +105,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
   user-select: none;
   flex-shrink: 0;
@@ -214,10 +171,6 @@ body {
   color: var(--carbon-black);
 }
 
-.nav-spacer {
-  height: 8px;
-}
-
 /* Taskbar */
 .site-taskbar {
   position: fixed;
@@ -265,7 +218,7 @@ body {
   border: 2px solid;
   border-color: rgba(255,255,255,0.8) rgba(0,0,0,0.4) rgba(0,0,0,0.4) rgba(255,255,255,0.8);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   height: 30px;
   min-width: 160px;
   cursor: pointer;
@@ -299,7 +252,7 @@ body {
   flex-direction: column;
   text-align: right;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--graphite);
   letter-spacing: 0.04em;
   line-height: 1.4;
@@ -332,10 +285,6 @@ body {
   word-break: break-all;
 }
 
-.site-nav-panel .sidebar-window--spaced {
-  margin-top: 0;
-}
-
 /* ============================================================
    HEADER
    ============================================================ */
@@ -349,18 +298,6 @@ header {
   top: 0;
   z-index: 200;
   border-bottom: 1px solid var(--carbon-black);
-}
-
-.site-title {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--carbon-black);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-
-.site-title:hover {
-  color: var(--tuscan-sun);
 }
 
 nav {
@@ -386,7 +323,7 @@ nav a.active {
    ============================================================ */
 .marquee-slot {
   overflow: hidden;
-  height: 22px;
+  height: 40px;
   flex-shrink: 0;
   background: var(--soft-linen);
 }
@@ -396,7 +333,7 @@ nav a.active {
   align-items: center;
   height: 100%;
   overflow: hidden;
-  padding-top: 2px;
+  padding-top: 20px;
 }
 
 .marquee-track {
@@ -440,12 +377,6 @@ footer {
   border-top: 1px solid var(--carbon-black);
 }
 
-.footer-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
 /* ============================================================
    HOME PAGE
    ============================================================ */
@@ -457,16 +388,11 @@ footer {
   padding: 3rem 2rem;
 }
 
-.home-win98-frame {
-  position: relative;
-  z-index: 1;
-  width: min(840px, 100%);
-  display: flex;
-}
-
 .home-hero-image {
   width: 100%;
   height: 540px;
+  object-fit: cover;
+  display: block;
 }
 
 .pride-flag {
@@ -501,6 +427,7 @@ footer {
 .about-portrait {
   width: 218px;
   height: 218px;
+  object-fit: cover;
 }
 
 .about-heading,
@@ -527,14 +454,6 @@ footer {
    ============================================================ */
 .services-outer {
   padding: 2.5rem 2rem 3rem;
-}
-
-.services-layout {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
 .services-main-content {
@@ -602,68 +521,10 @@ footer {
   flex-shrink: 0;
 }
 
-.services-contact {
-  margin-top: 2.2rem;
-  font-size: 1rem;
-}
-
-/* ============================================================
-   SLIDING SCALE SIDEBAR
-   ============================================================ */
-.sliding-scale-sidebar {
-  width: 240px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 5rem;
-  padding-top: 4rem;
-  padding-left: 2rem;
-}
-
-.sidebar-window {
-  border: 2px solid var(--carbon-black);
-  box-shadow: 3px 3px 0 var(--graphite);
-  overflow: hidden;
-}
-
-.sidebar-window--spaced {
-  margin-top: 2rem;
-}
-
-.sidebar-titlebar {
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.sidebar-close {
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.sidebar-content {
-  background-color: var(--tuscan-sun);
-  padding: 1.4rem 1.2rem;
-  font-size: 0.8rem;
-  line-height: 1.7;
-  color: var(--carbon-black);
-}
-
-.sidebar-content a {
-  color: var(--carbon-black);
-}
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 700px) {
-  .services-layout {
-    flex-direction: column;
-  }
-
-  .sliding-scale-sidebar {
-    width: 100%;
-    position: static;
-  }
-
   .service-item {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -681,10 +542,5 @@ footer {
     width: 100%;
     max-width: 376px;
     height: 220px;
-  }
-
-  .win98-frame {
-    width: 100%;
-    max-width: 376px;
   }
 }
