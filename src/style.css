@@ -7,6 +7,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ChicagoFLF';
+  src: url('/ChicagoFLF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ============================================================
    CSS VARIABLES — four-color palette
    ============================================================ */
@@ -32,7 +39,7 @@ body {
   background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.04) 1px, transparent 0);
   background-size: 16px 16px;
   color: var(--carbon-black);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'ChicagoFLF', sans-serif;
   font-size: 17px;
   line-height: 1.7;
   height: 100vh;
@@ -77,7 +84,7 @@ body {
   border: 1px solid var(--carbon-black);
   width: 16px;
   height: 14px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.8rem;
   box-shadow: inset -1px -1px 0 rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.5);
 }
@@ -104,7 +111,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   user-select: none;
@@ -148,7 +155,7 @@ body {
   border: 2px solid;
   border-color: rgba(255,255,255,0.95) rgba(0,0,0,0.55) rgba(0,0,0,0.55) rgba(255,255,255,0.95);
   box-shadow: 1px 1px 0 var(--carbon-black);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.75rem;
   text-decoration: none;
   color: var(--carbon-black);
@@ -194,7 +201,7 @@ body {
   background: var(--carbon-black);
   color: var(--soft-linen);
   padding: 3px 12px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
   border: 2px solid;
@@ -217,7 +224,7 @@ body {
   background: var(--soft-linen);
   border: 2px solid;
   border-color: rgba(255,255,255,0.8) rgba(0,0,0,0.4) rgba(0,0,0,0.4) rgba(255,255,255,0.8);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.9rem;
   height: 30px;
   min-width: 160px;
@@ -238,6 +245,12 @@ body {
   flex-shrink: 0;
 }
 
+.taskbar-pride-flag {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
 .taskbar-tray {
   margin-left: auto;
   display: flex;
@@ -251,7 +264,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: right;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.9rem;
   color: var(--graphite);
   letter-spacing: 0.04em;
@@ -260,12 +273,11 @@ body {
 
 .nav-info {
   padding: 8px 0;
-  border-top: 1px solid var(--carbon-black);
 }
 
 .nav-info-label {
   display: block;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
   font-size: 0.6rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -349,7 +361,7 @@ nav a.active {
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 @keyframes marquee {
@@ -395,17 +407,7 @@ footer {
   display: block;
 }
 
-.pride-flag {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: opacity(0.75);
-}
 
-.site-nav-panel .pride-flag {
-  margin-top: auto;
-  flex-shrink: 0;
-}
 
 /* ============================================================
    ABOUT PAGE
