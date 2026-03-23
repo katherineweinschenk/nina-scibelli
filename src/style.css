@@ -497,7 +497,80 @@ body {
   filter: saturate(0);
 }
 
+/* --- Reviews Widget --- */
+.reviews-widget {
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
+.reviews-heading {
+  font-family: 'Jersey 15', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--cool-stone);
+  font-weight: 500;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.review-card {
+  background: var(--mist);
+  border: 2px solid var(--cool-stone);
+  padding: 12px 14px;
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.review-stars {
+  color: var(--pale-pink);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.review-text {
+  font-size: 1rem;
+  color: var(--cool-stone);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.review-author {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 0.9rem;
+  color: var(--cool-stone);
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+}
+
+.reviews-link {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 0.9rem;
+  color: var(--cool-stone);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  border: 2px solid var(--cool-stone);
+  box-shadow: 2px 2px 0 var(--cool-stone);
+  background: var(--mist);
+}
+
+.reviews-link:hover {
+  background: var(--cool-stone);
+  color: var(--yellow);
+}
 
 /* ============================================================
    ABOUT PAGE
@@ -664,5 +737,9 @@ body {
 
   .pixel-sprite {
     z-index: 5;
+  }
+
+  .reviews-list {
+    flex-direction: column;
   }
 }
