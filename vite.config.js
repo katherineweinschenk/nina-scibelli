@@ -12,7 +12,7 @@ function layoutPlugin() {
       handler(html) {
         const layout = readFileSync(layoutPath, 'utf-8')
 
-        const title = (html.match(/<!--\s*title:\s*(.+?)\s*-->/) || [])[1] || 'Nina Scibelli, LMT, MDL-C'
+        const title = (html.match(/<!--\s*title:\s*(.+?)\s*-->/) || [])[1] || 'Nina Scibelli, LMT, MLD-c'
         const content = (html.match(/<!--\s*content\s*-->([\s\S]*?)<!--\s*\/content\s*-->/) || [])[1] || ''
         const nav = (html.match(/<!--\s*nav\s*-->([\s\S]*?)<!--\s*\/nav\s*-->/) || [])[1] || ''
 
