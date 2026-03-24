@@ -497,6 +497,35 @@ body {
   filter: saturate(0);
 }
 
+/* --- Scroll Arrow CTA --- */
+.site-content-area {
+  position: relative;
+}
+
+.scroll-arrow {
+  position: sticky;
+  bottom: 12px;
+  align-self: flex-end;
+  margin-right: 14px;
+  font-size: 1.2rem;
+  color: var(--cool-stone);
+  opacity: 1;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+
+.scroll-arrow.hidden {
+  opacity: 0;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
 /* --- Reviews Widget --- */
 .reviews-widget {
   width: 100%;
