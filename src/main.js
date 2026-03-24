@@ -17,17 +17,29 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
 const scrollArrow = document.querySelector('.scroll-arrow')
 const scrollContainer = document.querySelector('.site-content-area')
 if (scrollArrow && scrollContainer) {
-  const isHome = path === '/' || path === '/index.html'
-  const isServices = path.startsWith('/services')
-  if (!isHome && !isServices) {
+  const isAbout = path.includes('/about')
+  if (isAbout) {
     scrollArrow.classList.add('hidden')
   } else {
+    // Reset scroll position on fresh load so the arrow stays visible
+    scrollContainer.scrollTop = 0
+
+    let userHasScrolled = false
     scrollContainer.addEventListener('scroll', () => {
+      userHasScrolled = true
       if (scrollContainer.scrollTop > 40) {
         scrollArrow.classList.add('hidden')
       } else {
         scrollArrow.classList.remove('hidden')
       }
     }, { passive: true })
+
+    // Ignore any scroll shifts from fonts/images loading in the first second
+    setTimeout(() => {
+      if (!userHasScrolled) {
+        scrollContainer.scrollTop = 0
+        scrollArrow.classList.remove('hidden')
+      }
+    }, 1000)
   }
 }
