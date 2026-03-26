@@ -18,7 +18,8 @@ const scrollArrow = document.querySelector('.scroll-arrow')
 const scrollContainer = document.querySelector('.site-content-area')
 if (scrollArrow && scrollContainer) {
   const isAbout = path.includes('/about')
-  if (isAbout) {
+  const isMobile = window.matchMedia('(max-width: 700px)').matches
+  if (isAbout && !isMobile) {
     scrollArrow.classList.add('hidden')
   } else {
     // Reset scroll position on fresh load so the arrow stays visible

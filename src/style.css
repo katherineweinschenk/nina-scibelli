@@ -232,16 +232,17 @@ body {
 /* --- Placed instances --- */
 .pixel-sprite--rock {
   bottom: 2%;
-  left: 1%;
+  left: -1%;
   width: 400px;
   height: auto;
 }
 
-@keyframes rockWobble {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25%  { transform: translateY(-8px) rotate(2deg); }
-  50%  { transform: translateY(-3px) rotate(-1.5deg); }
-  75%  { transform: translateY(-10px) rotate(1deg); }
+.pixel-sprite--fountain {
+  bottom: 10%;
+  right: 1%;
+  width: 275px;
+  height: auto;
+  z-index: 5;
 }
 
 
