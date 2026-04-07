@@ -26,7 +26,7 @@ function layoutPlugin() {
 }
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/nina-scibelli/' : '/',
+  base: '/',
   plugins: [layoutPlugin()],
   build: {
     rollupOptions: {
