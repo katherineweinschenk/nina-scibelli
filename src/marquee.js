@@ -1,4 +1,4 @@
-const PHRASE = 'time to slow down'
+const PHRASE = 'slow down'
 const SEPARATOR = '\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0'
 const PHRASES_PER_ITEM = 8
 const ITEM_COUNT = 4
