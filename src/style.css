@@ -630,6 +630,7 @@ body {
   object-fit: cover;
   flex-shrink: 0;
   padding-top: 3rem;
+  filter: saturate(0);
 }
 
 .about-heading {
@@ -759,6 +760,7 @@ body {
     max-width: 280px;
     height: auto;
     padding-top: 0;
+    filter: saturate(0);
   }
 
   .site-footer {
